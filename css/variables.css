@@ -1,0 +1,22 @@
+
+:root {
+    --color-primary: #FFFFFF;
+    --color-secondary: #000000;
+    --color-tertiary: #545B42;
+    --btn-color: #F4C680;
+    --container-color: #FFF9F1;
+  
+    --font-opensans: 'Open Sans', Helvetica, sans-serif;
+    --font-roboto: 'Roboto', Arial, sans-serif;
+
+    --font-size-mobile-h2: 30px;
+    --font-size-mobile-h3: 18px;
+    --font-size-mobile-copy: 14px;
+    --font-size-tablet-h2: 40px;
+    --font-size-tablet-h3: 20px;
+    --font-size-tablet-desktop-copy: 16px;
+    --font-size-desktop-h2: 54px;
+    --font-size-desktop-h3: 26px;
+
+
+}
