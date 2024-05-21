@@ -160,7 +160,7 @@
     max-width: calc(100% - 5rem); 
     margin: 0 auto;
     display: grid;
-    grid-row-gap: 5.625rem; /* Vertical gap, remove before delivery */
+    grid-row-gap: var(--margin-between-content-mobile-tablet); /* Vertical gap, remove before delivery */
     grid-column-gap: 3rem; /* Horizontal gap, remove before delivery */
     justify-items: center;
     align-items: center;
@@ -215,3 +215,64 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.follow-subscribe-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: var(--margin-mobile);
+    margin-top: var(--margin-between-content-mobile-tablet);
+}
+
+.follow-us-container, .subscribe-container {
+    width: 100%;
+}
+
+.heading-container {
+    text-align: center;
+    background-color: var(--color-tertiary);
+    color: var(--color-primary);
+    padding: 4px 0;
+}
+
+.follow-us-icons {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 80px;
+}
+
+.follow-us-icons i {
+    font-size: 24px;
+    margin: 0 18px;
+    cursor: pointer;
+}
+
+.subscribe-container {
+    position: relative;
+}
+
+.form-container {
+    /*Keep because might want to style it later with other forms*/
+}
+
+form {
+    width: 100%;
+}
+
+input, textarea {
+    color: var(--color-tertiary);
+    width: 100%;
+    border: 1px solid var(--color-tertiary);
+    padding: 12px 8px;
+    cursor: text;
+    resize: none;
+}
+
+.subscribe-container .button {
+    position: absolute;
+    top: 220px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+

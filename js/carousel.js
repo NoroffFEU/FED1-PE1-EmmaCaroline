@@ -1,4 +1,4 @@
-// have to change name of the file here and in the html file/s, and organise the js files better
+// Banner carousel
 
 let slideIndex = 1;
 showSlides(slideIndex);
@@ -28,3 +28,9 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 }
+
+
+// Simple way to clear the textarea for the Subscribe button, move to another file later
+document.getElementById('clearButton').addEventListener('click', function() {
+  document.getElementById('subscribe-email').value = '';
+});

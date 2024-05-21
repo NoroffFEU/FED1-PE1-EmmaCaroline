@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/7f993fe397.js" crossorigin="anonymous"></script>
-    <script src="./js/home.js" defer></script>
+    <script src="./js/carousel.js" defer></script>
 </head>
 <body>
     <header>
@@ -23,7 +23,7 @@
 			  <li><a href="index.html" aria-label="Home">Home</a></li>
 			  <li><a href="./account/login.html" aria-label="Visit">Account Login</a></li>
 			  <li><a href="./account/register.html" aria-label="Exhibitions">Account Register</a></li>
-              <!--<li id="createPostLink" style="display: none;"><a href="/blog/create">Create Post</a></li> use later with js--> 
+              <!--<li id="createPostLink" style="display: none;"><a href="./post/create.html">Create Post</a></li> use later with js--> 
 			</ul>
 	  	</div>
   	</header>
@@ -194,10 +194,10 @@
                 </div>
             </div>
         </section>
-        <section>
+        <section class="follow-subscribe-container">
             <div class="follow-us-container">
-                <div class="heading-followus-subscribe">
-                    <h3>Follow Us</h3>
+                <div class="heading-container">
+                    <h3>Follow us</h3>
                 </div>
                 <div class="follow-us-icons">
                     <i class="fa-brands fa-youtube"></i>
@@ -207,21 +207,27 @@
                 </div>
             </div>
             <div class="subscribe-container">
-                <div class="heading-followus-subscribe">
+                <div class="heading-container">
                     <h3>Subscribe</h3>
                 </div>
                 <p>Want to keep up with the latest tips and hiking inspiration? Get notified by email when new posts are published!</p>
                 <div class="form-container">
                     <form>
-                        <label for="email" class="visually-hidden">Email Address</label>
-                        <input type="text" id="email" name="email" placeholder="&emsp;Email Address">
+                        <label for="subscribe-email" class="visually-hidden">Email Address</label>
+                        <input type="text" id="subscribe-email" name="subscribe-email" placeholder="&emsp;Email Address">
                     </form>
-                    <div class="button">
+                    <div id="clearButton" class="button">
                         <p>Sign up</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+    <footer>
+        <ul class="footer-nav">
+            <li><p>Privacy Policy</p></li>
+            <li><p>Terms and Conditions</p></li> 
+          </ul>
+    </footer>
 </body>
 </html>

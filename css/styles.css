@@ -1,4 +1,5 @@
-/* Have to organise in separate css files later */
+
+/* Main stylesheet - header, button and footer styling + media queries */
 
 @import url(./reset.css);
 @import url(./variables.css);
@@ -140,7 +141,7 @@ li:first-child a {
 
 /* MAIN - MARGIN */
 
-main {
+main, footer {
     padding-top: 84px; /* Also add to footer */
 }
 
@@ -164,6 +165,22 @@ main {
     text-wrap: nowrap;
 }
 
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-tertiary);
+    color: var(--color-primary);
+    font-family: var(--font-roboto);
+    font-size: var(--font-size-mobile-copy);
+    padding: 10px 0;
+    margin-top: var(--margin-between-content-mobile-tablet);
+}
+
+.footer-nav li {
+    margin: 0 10px;
+}
+
 @media (min-width: 600px) { /* TABLET */
 
     /* HEADER, TABLET */
@@ -181,9 +198,15 @@ main {
         font-size: var(--font-size-tablet-desktop-copy);
     }
 
+    /* FOOTER */
+
+    .footer-nav li {
+        margin: 0 40px;
+    }
+
     /* MAIN - MARGIN */
 
-    main {
+    main, footer {
         padding-top: 94px;
     }
 
@@ -230,6 +253,17 @@ main {
     .blog-post-thumbnail {
         height: 420px;
     }
+
+    /* Follow us / Subscribe */
+
+    .follow-subscribe-container {
+        margin: var(--margin-between-content-mobile-tablet) 140px 0 140px;
+    }
+
+    .follow-us-icons {
+        margin-bottom: 120px;
+    }
+
 }
 
 @media (min-width: 1026px) { /* DESKTOP */
@@ -272,9 +306,24 @@ main {
         display: none;
     }
 
+    /* FOOTER, DESKTOP */
+
+    .footer-nav {
+        margin-top: var(--margin-between-content-desktop);
+        padding: 16px 0;
+    }
+
+    .footer-nav li {
+        margin: 0 80px;
+    }
+
+    .footer-nav p {
+        cursor: pointer;
+    }
+
     /* MAIN - MARGIN */
 
-    main {
+    main, footer {
         padding-top: 80px; 
     }
 
@@ -297,9 +346,25 @@ main {
     .thumbnail-imageGrid {
         grid-template-columns: repeat(3, 1fr);
         max-width: calc(100% - 12.5rem);
+        grid-row-gap: var(--margin-between-content-desktop);
     }
 
     .blog-name-info {
         margin: var(--margin-desktop);
+    }
+
+    /* Follow us / Subscribe */
+
+    .follow-subscribe-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin: var(--margin-desktop);
+        margin-top: var(--margin-between-content-desktop);
+    }
+
+    .follow-us-container, .subscribe-container {
+        width: 31%;
     }
 }
