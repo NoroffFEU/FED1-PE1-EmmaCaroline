@@ -30,6 +30,6 @@ h1, h2, h3 {
     font-weight: 600;
 }
 
-p, input {
+p, a, input {
     font-family: var(--font-roboto);
 }

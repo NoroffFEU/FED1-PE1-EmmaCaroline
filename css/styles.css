@@ -4,6 +4,8 @@
 @import url(./reset.css);
 @import url(./variables.css);
 @import url(./home.css);
+@import url(./blogpostpublic.css);
+
 
 .visually-hidden {
     position: absolute;
@@ -20,7 +22,7 @@
 /* HEADER */
 
 header {
-    padding: 0 1.75rem 0 1.75rem;
+    padding: var(--margin-mobile);
     position: fixed; 
     height: 84px;
     width: auto;
@@ -155,9 +157,8 @@ main, footer {
     cursor: pointer;
 }
 
-.button p {
+.button p, .button a {
     color: var(--color-secondary);
-    font-family: var(--font-roboto);
     font-size: 14px;
     text-transform: uppercase;
     margin: 0;
@@ -187,7 +188,7 @@ main, footer {
 
     header {
         height: 94px;
-        padding: 0 3.75rem 0 3.75rem;
+        padding: var(--margin-tablet);
     }
     
     .menu {
@@ -198,19 +199,19 @@ main, footer {
         font-size: var(--font-size-tablet-desktop-copy);
     }
 
-    /* FOOTER */
+    /* FOOTER, TABLET */
 
     .footer-nav li {
         margin: 0 40px;
     }
 
-    /* MAIN - MARGIN */
+    /* MAIN - MARGIN, TABLET */
 
     main, footer {
         padding-top: 94px;
     }
 
-    /* BANNER CAROUSEL, TABLET */
+    /* BLOG FEED PAGE, TABLET */
 
     .banner-carousel-container, .banner-image-container {
         height: 505px;
@@ -228,14 +229,10 @@ main, footer {
         font-size: var(--font-size-tablet-h3);
     }
 
-    /* LOGO */
-
     .logo img {
         width: 65px;
         height: 65px;
     }
-
-    /* THUMBNAIL GRID */
 
     .thumbnail-imageGrid {
         grid-template-columns: repeat(2, 1fr);
@@ -254,14 +251,35 @@ main, footer {
         height: 420px;
     }
 
-    /* Follow us / Subscribe */
-
     .follow-subscribe-container {
         margin: var(--margin-between-content-mobile-tablet) 140px 0 140px;
     }
 
     .follow-us-icons {
         margin-bottom: 120px;
+    }
+
+    /* BLOG POST PUBLIG PAGE, TABLET */
+
+    .title, .author-date-container, .copy-content {
+        margin: var(--margin-tablet);
+    }
+
+    .title {
+        margin-top: 50px;
+    }
+
+    .author {
+        padding-right: 34px;
+    }
+    
+    .date {
+        padding-left: 34px;
+    }
+
+    .media {
+        height: 504px;
+        margin-bottom: 40px;
     }
 
 }
@@ -321,13 +339,11 @@ main, footer {
         cursor: pointer;
     }
 
-    /* MAIN - MARGIN */
+    /* MAIN - MARGIN, DESKTOP */
 
     main, footer {
         padding-top: 80px; 
     }
-
-    /* BANNER CAROUSEL */
 
     .banner-text h2 { 
         font-size: var(--font-size-desktop-h2);
@@ -336,8 +352,6 @@ main, footer {
     .banner-text-small, .blog-name-info h3, .blog-post-title {
         font-size: var(--font-size-desktop-h3);
     }
-
-    /* THUMBNAIL GRID */
 
     .grid-image-container {
         height: 148px;
@@ -353,8 +367,6 @@ main, footer {
         margin: var(--margin-desktop);
     }
 
-    /* Follow us / Subscribe */
-
     .follow-subscribe-container {
         display: flex;
         flex-direction: row;
@@ -366,5 +378,15 @@ main, footer {
 
     .follow-us-container, .subscribe-container {
         width: 31%;
+    }
+
+    /* BLOG POST PUBLIG PAGE, TABLET */
+
+    .title, .author-date-container, .copy-content {
+        margin: var(--margin-desktop);
+    }
+
+    .title {
+        margin-top: 60px;
     }
 }
