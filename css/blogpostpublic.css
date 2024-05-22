@@ -45,3 +45,7 @@
     height: 100%;
     object-fit: cover;
 }
+
+.copy-content {
+    margin-bottom: var(--margin-between-content-mobile-tablet);
+}

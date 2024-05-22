@@ -5,6 +5,7 @@
 @import url(./variables.css);
 @import url(./home.css);
 @import url(./blogpostpublic.css);
+@import url(./formpages.css);
 
 
 .visually-hidden {
@@ -141,14 +142,13 @@ li:first-child a {
     text-transform: uppercase;
 }
 
-/* MAIN - MARGIN */
+/* MAIN */
 
-main, footer {
-    padding-top: 84px; /* Also add to footer */
+main {
+    padding-top: 84px;
 }
 
 /* BUTTON STYLING */
-
 
 .button { 
     text-align: center;
@@ -175,7 +175,6 @@ main, footer {
     font-family: var(--font-roboto);
     font-size: var(--font-size-mobile-copy);
     padding: 10px 0;
-    margin-top: var(--margin-between-content-mobile-tablet);
 }
 
 .footer-nav li {
@@ -205,9 +204,9 @@ main, footer {
         margin: 0 40px;
     }
 
-    /* MAIN - MARGIN, TABLET */
+    /* MAIN, TABLET */
 
-    main, footer {
+    main {
         padding-top: 94px;
     }
 
@@ -252,14 +251,14 @@ main, footer {
     }
 
     .follow-subscribe-container {
-        margin: var(--margin-between-content-mobile-tablet) 140px 0 140px;
+        margin: var(--margin-tablet);
     }
 
     .follow-us-icons {
         margin-bottom: 120px;
     }
 
-    /* BLOG POST PUBLIG PAGE, TABLET */
+    /* BLOG POST PUBLIC PAGE, TABLET */
 
     .title, .author-date-container, .copy-content {
         margin: var(--margin-tablet);
@@ -280,6 +279,16 @@ main, footer {
     .media {
         height: 504px;
         margin-bottom: 40px;
+    }
+
+    .copy-content {
+        margin-bottom: var(--margin-between-content-mobile-tablet);
+    }
+
+    /* CREATE POST PAGE, TABLET */
+
+    .form-container {
+        margin: var(--margin-tablet);
     }
 
 }
@@ -327,7 +336,6 @@ main, footer {
     /* FOOTER, DESKTOP */
 
     .footer-nav {
-        margin-top: var(--margin-between-content-desktop);
         padding: 16px 0;
     }
 
@@ -339,9 +347,9 @@ main, footer {
         cursor: pointer;
     }
 
-    /* MAIN - MARGIN, DESKTOP */
+    /* MAIN, DESKTOP */
 
-    main, footer {
+    main {
         padding-top: 80px; 
     }
 
@@ -374,13 +382,14 @@ main, footer {
         align-items: flex-start;
         margin: var(--margin-desktop);
         margin-top: var(--margin-between-content-desktop);
+        margin-bottom: var(--margin-between-content-desktop);
     }
 
     .follow-us-container, .subscribe-container {
         width: 31%;
     }
 
-    /* BLOG POST PUBLIG PAGE, TABLET */
+    /* BLOG POST PUBLIC PAGE, DESKTOP */
 
     .title, .author-date-container, .copy-content {
         margin: var(--margin-desktop);
@@ -388,5 +397,17 @@ main, footer {
 
     .title {
         margin-top: 60px;
+    }
+
+    .copy-content {
+        margin-bottom: var(--margin-between-content-desktop);
+    }
+
+    /* CREATE POST PAGE */
+
+    .form-container {
+        margin: var(--margin-desktop);
+        margin-top: var(--margin-between-content-desktop);
+        margin-bottom: var(--margin-between-content-desktop);
     }
 }

@@ -1,0 +1,46 @@
+/*
+Styling of the forms on these pages:
+- create.html
+- edit.html
+- login.html
+- register.html
+*/
+
+.form-container {
+    background-color: var(--container-color);
+    border: 1px solid var(--color-tertiary);
+    margin: var(--margin-mobile);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 10px;
+    margin-top: var(--margin-between-content-mobile-tablet);
+    margin-bottom: var(--margin-between-content-mobile-tablet);
+}
+
+.form-container form {
+    box-sizing: border-box;
+}
+
+.form-container input, .form-container textarea {
+    color: var(--color-tertiary);
+    width: 100%;
+    border: 1px solid var(--color-tertiary);
+    padding: 12px 8px;
+    cursor: text;
+    resize: none;
+    margin-bottom: 10px;
+}
+
+.button-wrapper {
+    background-color: var(--color-tertiary);
+    width: 100%; 
+    display: flex; 
+    justify-content: center; 
+    padding: 12px 0;
+}
+
+#form-login-register {
+    margin-bottom: 410px;
+}

@@ -160,8 +160,8 @@
     max-width: calc(100% - 5rem); 
     margin: 0 auto;
     display: grid;
-    grid-row-gap: var(--margin-between-content-mobile-tablet); /* Vertical gap, remove before delivery */
-    grid-column-gap: 3rem; /* Horizontal gap, remove before delivery */
+    grid-row-gap: var(--margin-between-content-mobile-tablet); /* Vertical gap, remove comment later */
+    grid-column-gap: 3rem; /* Horizontal gap, remove comment later */
     justify-items: center;
     align-items: center;
 }
@@ -223,6 +223,7 @@
     align-items: center;
     margin: var(--margin-mobile);
     margin-top: var(--margin-between-content-mobile-tablet);
+    margin-bottom: var(--margin-between-content-mobile-tablet);
 }
 
 .follow-us-container, .subscribe-container {
@@ -252,27 +253,32 @@
     position: relative;
 }
 
-.form-container {
-    /*Keep because might want to style it later with other forms*/
+.subscribe-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-form {
+.subscribe-form-container form {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    box-sizing: border-box;
 }
 
-input, textarea {
+.subscribe-form-container input {
     color: var(--color-tertiary);
     width: 100%;
     border: 1px solid var(--color-tertiary);
     padding: 12px 8px;
     cursor: text;
     resize: none;
+    margin-bottom: 20px;
 }
 
 .subscribe-container .button {
-    position: absolute;
-    top: 220px;
-    left: 50%;
-    transform: translateX(-50%);
+    width: auto; /* Ensure the button doesn't stretch to full width */
 }
 

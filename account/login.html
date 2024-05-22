@@ -20,13 +20,28 @@
 			<span id="toggle-menu-label" class="visually-hidden">Toggle Menu</span>
 		  	<div class="hamburger"></div>
 			<ul class="menu">
-			  <li><a href="../index.html" aria-label="Home">Home</a></li>
-			  <li><a href="login.html" aria-label="Visit">Account Login</a></li>
-			  <li><a href="./register.html" aria-label="Exhibitions">Account Register</a></li> 
+			    <li><a href="../index.html" aria-label="Home">Home</a></li>
+			    <li><a href="login.html" aria-label="Visit">Account Login</a></li>
+			    <li><a href="./register.html" aria-label="Exhibitions">Account Register</a></li> 
 			</ul>
 	  	</div>
   	</header>
-    <main></main>
+    <main>
+        <div id="form-login-register" class="form-container"> <!-- Maybe remove author and date, see after js work -->
+            <h3>Account Login</h3>
+            <form>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="Enter email">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required placeholder="Enter password">
+            </form>
+            <div class="button-wrapper">
+                <div class="button">
+                    <p>Sign in</p>
+                </div>
+            </div>
+        </div>
+    </main>
     <footer>
         <ul class="footer-nav">
             <li><p>Privacy Policy</p></li>
