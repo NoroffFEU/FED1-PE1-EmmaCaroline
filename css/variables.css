@@ -18,9 +18,9 @@
     --font-size-desktop-h2: 54px;
     --font-size-desktop-h3: 26px;
 
-    --margin-mobile: 0 40px;
-    --margin-tablet: 0 68px;
-    --margin-desktop: 0 100px;
+    --margin-mobile: 40px;
+    --margin-tablet: 68px;
+    --margin-desktop: 100px;
     --margin-between-content-mobile-tablet: 3.4rem;
     --margin-between-content-desktop: 5.625rem;
 }

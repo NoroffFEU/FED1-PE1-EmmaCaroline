@@ -6,7 +6,8 @@
 }
 
 .title, .author-date-container, .copy-content {
-    margin: var(--margin-mobile);
+    margin-left: var(--margin-mobile);
+    margin-right: var(--margin-mobile);
 }
 
 .title {

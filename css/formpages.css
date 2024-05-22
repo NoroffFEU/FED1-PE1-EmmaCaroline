@@ -9,14 +9,12 @@ Styling of the forms on these pages:
 .form-container {
     background-color: var(--container-color);
     border: 1px solid var(--color-tertiary);
-    margin: var(--margin-mobile);
+    margin: var(--margin-between-content-mobile-tablet) var(--margin-mobile); 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 24px 10px;
-    margin-top: var(--margin-between-content-mobile-tablet);
-    margin-bottom: var(--margin-between-content-mobile-tablet);
 }
 
 .form-container form {
@@ -33,14 +31,6 @@ Styling of the forms on these pages:
     margin-bottom: 10px;
 }
 
-.button-wrapper {
-    background-color: var(--color-tertiary);
-    width: 100%; 
-    display: flex; 
-    justify-content: center; 
-    padding: 12px 0;
-}
-
 #form-login-register {
-    margin-bottom: 410px;
+    margin-bottom: 440px;
 }

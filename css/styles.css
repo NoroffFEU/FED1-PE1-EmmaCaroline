@@ -23,7 +23,7 @@
 /* HEADER */
 
 header {
-    padding: var(--margin-mobile);
+    padding: 0 var(--margin-mobile);
     position: fixed; 
     height: 84px;
     width: auto;
@@ -187,7 +187,7 @@ main {
 
     header {
         height: 94px;
-        padding: var(--margin-tablet);
+        padding: 0 var(--margin-tablet);
     }
     
     .menu {
@@ -239,7 +239,7 @@ main {
     }
 
     .blog-name-info {
-        margin: var(--margin-tablet);
+        margin: 0 var(--margin-tablet);
     }
 
     .blog-name-info p, .button p, .thumbnail-text-small {
@@ -251,7 +251,7 @@ main {
     }
 
     .follow-subscribe-container {
-        margin: var(--margin-tablet);
+        margin: var(--margin-between-content-mobile-tablet) var(--margin-tablet);
     }
 
     .follow-us-icons {
@@ -261,7 +261,8 @@ main {
     /* BLOG POST PUBLIC PAGE, TABLET */
 
     .title, .author-date-container, .copy-content {
-        margin: var(--margin-tablet);
+        margin-left: var(--margin-tablet);
+        margin-right: var(--margin-tablet);
     }
 
     .title {
@@ -288,7 +289,7 @@ main {
     /* CREATE POST PAGE, TABLET */
 
     .form-container {
-        margin: var(--margin-tablet);
+        margin: var(--margin-between-content-mobile-tablet) var(--margin-tablet);
     }
 
 }
@@ -372,7 +373,7 @@ main {
     }
 
     .blog-name-info {
-        margin: var(--margin-desktop);
+        margin: 0 var(--margin-desktop);
     }
 
     .follow-subscribe-container {
@@ -380,9 +381,7 @@ main {
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
-        margin: var(--margin-desktop);
-        margin-top: var(--margin-between-content-desktop);
-        margin-bottom: var(--margin-between-content-desktop);
+        margin: var(--margin-between-content-desktop) var(--margin-desktop);
     }
 
     .follow-us-container, .subscribe-container {
@@ -392,7 +391,8 @@ main {
     /* BLOG POST PUBLIC PAGE, DESKTOP */
 
     .title, .author-date-container, .copy-content {
-        margin: var(--margin-desktop);
+        margin-left: var(--margin-desktop);
+        margin-right: var(--margin-desktop);
     }
 
     .title {
@@ -406,8 +406,6 @@ main {
     /* CREATE POST PAGE */
 
     .form-container {
-        margin: var(--margin-desktop);
-        margin-top: var(--margin-between-content-desktop);
-        margin-bottom: var(--margin-between-content-desktop);
+        margin: var(--margin-between-content-desktop) var(--margin-desktop);
     }
 }

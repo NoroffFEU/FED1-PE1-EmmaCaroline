@@ -135,7 +135,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: var(--margin-mobile);
+    margin: 0 var(--margin-mobile);
 }
 
 .blog-name-info h3 {
@@ -221,9 +221,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: var(--margin-mobile);
-    margin-top: var(--margin-between-content-mobile-tablet);
-    margin-bottom: var(--margin-between-content-mobile-tablet);
+    margin: var(--margin-between-content-mobile-tablet) var(--margin-mobile);
 }
 
 .follow-us-container, .subscribe-container {
@@ -279,6 +277,6 @@
 }
 
 .subscribe-container .button {
-    width: auto; /* Ensure the button doesn't stretch to full width */
+    width: auto;
 }
 
