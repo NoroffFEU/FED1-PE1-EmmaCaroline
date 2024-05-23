@@ -4,15 +4,7 @@
 let slideIndex = 1;
 showSlides(slideIndex);
 
-window.plusSlides = function(n) {
-  showSlides(slideIndex += n);
-}
-
-window.currentSlide = function(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
+export function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("banner-images");
   let dots = document.getElementsByClassName("dot");
@@ -27,3 +19,21 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 }
+
+window.plusSlides = function(n) {
+  showSlides(slideIndex += n);
+}
+
+window.currentSlide = function(n) {
+  showSlides(slideIndex = n);
+}
+
+
+// Thumbnail grid
+
+
+// Clears the textarea for the subscribe button, to improve the realism of the site
+
+document.getElementById('clearButton').addEventListener('click', function() {
+  document.getElementById('subscribe-email').value = '';
+});

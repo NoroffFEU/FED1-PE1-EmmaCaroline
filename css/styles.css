@@ -150,16 +150,16 @@ main {
 
 /* BUTTON STYLING */
 
-.button { 
+.button, button { 
     text-align: center;
     background-color: var(--btn-color);
     padding: 12px 26px;
     cursor: pointer;
 }
 
-.button p, .button a {
+.button p, button p, .button a, button a { /*remove button p later, don't need*/
     color: var(--color-secondary);
-    font-size: 14px;
+    font-size: var(--font-size-mobile-copy);
     text-transform: uppercase;
     margin: 0;
     padding: 0;
@@ -195,6 +195,12 @@ main {
     }
     
     .menu li a {
+        font-size: var(--font-size-tablet-desktop-copy);
+    }
+
+    /* BUTTON, TABLET */
+
+    .button p, button p, .button a, button a {
         font-size: var(--font-size-tablet-desktop-copy);
     }
 
