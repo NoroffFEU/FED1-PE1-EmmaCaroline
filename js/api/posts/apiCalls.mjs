@@ -54,33 +54,22 @@ export async function deleteBlogPost(id, name = DEFAULT_NAME) {
     return response;
 }
 
-/*export async function updateBlogPost(id, postData, name = DEFAULT_NAME) {
-    const endpoint = `${API_BASE_URL}/blog/posts/${name}/${id}`;
-    const response = await authFetch(endpoint, {
-        method: 'PUT',
-        body: JSON.stringify(postData),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    });
-
-    if (!response.ok) {
-        throw new Error('Failed to update post');
-    }
-
-    return response;
-}*/
-
 export async function updateBlogPost(postData, name = DEFAULT_NAME) {
     const endpoint = `${API_BASE_URL}/blog/posts/${name}/${postData.id}`;
     const response = await authFetch(endpoint, {
-        method: 'put',
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
         body: JSON.stringify(postData)
-    })
+    });
+
+    const responseBody = await response.json();
 
     if (!response.ok) {
-        throw new Error('Failed to update post');
+        console.error('Failed to update post:', responseBody);
+        throw new Error(`Failed to update post: ${responseBody.errors ? responseBody.errors[0].message : ''}`);
     }
 
-    return await response.json();
+    return responseBody;
 }
