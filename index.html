@@ -11,7 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/7f993fe397.js" crossorigin="anonymous"></script>
-    <script type="module" src="./js/homepage/home.mjs" defer></script>
+    <script type="module" src="./js/homepage/carousel.mjs" defer></script>
+    <script type="module" src="./js/api/posts/allPosts.mjs" defer></script>
     <script type="module" src="./js/index.mjs" defer></script>
 </head>
 <body>
@@ -24,59 +25,15 @@
 			  <li><a href="index.html" aria-label="Home">Home</a></li>
 			  <li><a href="./account/login.html" aria-label="Account Login">Account Login</a></li>
 			  <li><a href="./account/register.html" aria-label="Account Register">Account Register</a></li>
-              <li><a href="./post/create.html">create</a></li>
-              <li><a href="./post/edit.html">edit</a></li>
-              <!--<li id="createPostLink" style="display: none;"><a href="./post/create.html">Create Post</a></li> use later with js--> 
+              <li id="createPostLink" style="display: none;"><a href="./post/create.html">Create Post</a></li>
 			</ul>
 	  	</div>
   	</header>
     <main>
         <h1 class="visually-hidden">All About Adventures - Hiking inspiration and tips</h1>
         <section class="banner-carousel-container">
-            <div class="banner-images fade"> 
-                <div class="banner-image-container">
-                    <div class="banner-image-overlay"></div>  
-                    <img src="./images/imageFirst_200.jpg">
-                </div>
-                <div class="banner-text">
-                    <h2>W Trek in Torres Del Paine:  <span class="banner-text-small">A four-day hike through amazing varied terrain</span></h2>
-                </div> 
-                <div class="button">
-                    <a href="./post/index.html">Read More</a>
-                </div>
-            </div>
-            <div class="banner-images fade"> 
-                <div class="banner-image-container">
-                    <div class="banner-image-overlay"></div>
-                    <img src="./images/image_trolltunga_200.jpg">
-                </div>
-                <div class="banner-text">
-                    <h2>Journey to the Edge: <span class="banner-text-small">Exploring Trolltunga, Norway's iconic cliff</span></h2>
-                </div>
-                <div class="button">
-                    <a href="./post/index.html">Read More</a>
-                </div>
-            </div>
-            <div class="banner-images fade"> 
-                <div class="banner-image-container">
-                    <div class="banner-image-overlay"></div> 
-                    <img src="./images/image_lake_200.jpg">
-                </div>
-                <div class="banner-text">
-                    <h2>River Adventure: <span class="banner-text-small">Navigating serene waters through the rainforest in Costa Rica</span></h2>
-                </div>
-                <div class="button">
-                    <a href="./post/index.html">Read More</a>
-                </div> 
-            </div>
-            <a class="banner-prev" onclick="plusSlides(-1)">&#10094;</a> 
-            <a class="banner-next" onclick="plusSlides(1)">&#10095;</a> 
+            <!-- Slides and dots will be dynamically injected here -->
         </section>
-        <div class="banner-dots"> 
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-        </div>
         <div class="logo">
             <img src="./images/logo.png">
         </div>
@@ -87,7 +44,22 @@
                 photos from their adventures in the great outdoors.
             <p>Join us as we traverse rugged mountain peaks, meander through lush forests, and forge unforgettable memories on trails less traveled.</p>
         </div>
-        <section class="thumbnail-imageGrid"> 
+        <h1>All Blog Posts</h1>
+        <section class="thumbnail-imageGrid" id="thumbnailGrid">
+            <!-- Posts will be dynamically inserted here -->
+        </section>
+        <!--<section class="thumbnail-imageGrid"> 
+            <div class="blog-post-thumbnail">
+                <div class="grid-image-container">
+                    <img src="">
+                </div>
+                <h3 class="blog-post-title"><span class="thumbnail-text-small"></span></h3>
+                <div class="button">
+                    <a href="">Read More</a>
+                </div>
+            </div>
+        </section>-->
+        <!--<section class="thumbnail-imageGrid"> 
             <div class="blog-post-thumbnail">
                 <div class="grid-image-container">
                     <img class="gridImage" src="./images/imageFirst_200.jpg">
@@ -196,7 +168,7 @@
                     <a href="./post/index.html">Read More</a>
                 </div>
             </div>
-        </section>
+        </section>-->
         <section class="follow-subscribe-container">
             <div class="follow-us-container">
                 <div class="heading-container">

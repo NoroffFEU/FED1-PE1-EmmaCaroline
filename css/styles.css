@@ -227,7 +227,7 @@ main {
     }
 
     .banner-text h2 {
-        font-size: var(--font-size-tablet-h2);
+        font-size: 28px;
     }
 
     .banner-text-small, .blog-name-info h3, .blog-post-title {
@@ -248,7 +248,7 @@ main {
         margin: 0 var(--margin-tablet);
     }
 
-    .blog-name-info p, .button p, .thumbnail-text-small {
+    .blog-name-info p, .button p {
         font-size: var(--font-size-tablet-desktop-copy);
     }
 
@@ -266,6 +266,10 @@ main {
 
     /* BLOG POST PUBLIC PAGE, TABLET */
 
+    .author {
+        margin-right: 3rem;
+    }
+    
     .title, .author-date-container, .copy-content {
         margin-left: var(--margin-tablet);
         margin-right: var(--margin-tablet);
@@ -273,14 +277,8 @@ main {
 
     .title {
         margin-top: 50px;
-    }
-
-    .author {
-        padding-right: 34px;
-    }
-    
-    .date {
-        padding-left: 34px;
+        margin-bottom: 50px;
+        font-size: var(--font-size-tablet-h3);
     }
 
     .media {
@@ -361,15 +359,15 @@ main {
     }
 
     .banner-text h2 { 
-        font-size: var(--font-size-desktop-h2);
+        font-size: 38px;
     }
 
-    .banner-text-small, .blog-name-info h3, .blog-post-title {
+    .blog-name-info h3 {
         font-size: var(--font-size-desktop-h3);
     }
 
     .grid-image-container {
-        height: 148px;
+        height: 180px;
     }
 
     .thumbnail-imageGrid {
@@ -396,13 +394,14 @@ main {
 
     /* BLOG POST PUBLIC PAGE, DESKTOP */
 
-    .title, .author-date-container, .copy-content {
+    .author-date-container .copy-content {
         margin-left: var(--margin-desktop);
         margin-right: var(--margin-desktop);
     }
 
     .title {
         margin-top: 60px;
+        margin-bottom: 60px;
     }
 
     .copy-content {

@@ -1,8 +1,17 @@
 
 /* Styling of content on post/index.html */
 
-.post-content {
+.allPosts { /*change to not camelCase*/
     /**/
+}
+
+.author-date-container {
+    display: flex;
+    align-items: center;
+}
+
+.author {
+    margin-right: 1rem;
 }
 
 .title, .author-date-container, .copy-content {
@@ -12,27 +21,10 @@
 
 .title {
     margin-top: 40px;
-}
-
-.author-date-container {
+    margin-bottom: 40px;
     display: flex;
-}
-
-.author, .date {
-    display: flex;
-}
-
-.author {
-    padding-right: 14px;
-}
-
-.date {
-    padding-left: 14px;
-}
-
-.author i, .date i {
-    padding-top: 15px;
-    margin-right: 4px;
+    justify-content: flex-start;
+    font-size: var(--font-size-mobile-h3);
 }
 
 .media {
@@ -49,4 +41,5 @@
 
 .copy-content {
     margin-bottom: var(--margin-between-content-mobile-tablet);
+    line-height: 26px;
 }

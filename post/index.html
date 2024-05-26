@@ -7,13 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="All About Adventures - Blog Post">
     <title>Blog Post Public</title>
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/7f993fe397.js" crossorigin="anonymous"></script>
-    <script type="module" src="./js/index.mjs" defer></script>
+    <script type="module" src="../js/api/posts/singlePost.mjs" defer></script>
+    <script type="module" src="../js/index.mjs" defer></script>
 </head>
 <body>
     <header>
@@ -24,45 +25,15 @@
 			<ul class="menu">
 			    <li><a href="../index.html" aria-label="Home">Home</a></li>
 			    <li><a href="../account/login.html" aria-label="Visit">Account Login</a></li>
-			    <li><a href="../account/register.html" aria-label="Exhibitions">Account Register</a></li> 
+			    <li><a href="../account/register.html" aria-label="Exhibitions">Account Register</a></li>
+                <li id="createPostLink" style="display: none;"><a href="../post/create.html">Create Post</a></li>
 			</ul>
 	  	</div>
   	</header>
     <main>
-        <article class="post-content">  <!-- Change all this to id later if needed (css: # instead of .)-->
-            <h1 class="title">W Trek in Torres Del Paine: <span class="thumbnail-text-smaller">A four-day hike through varied terrain</span></h1>
-            <div class="author-date-container">
-                <div class="author">
-                    <i class="fa-solid fa-user"></i>
-                    <p>Author</p>
-                </div>
-                <div class="date">
-                    <i class="fa-solid fa-calendar-days"></i>
-                    <p>May 01, 2024</p>   <!-- <time datetime="2024-05-22">May 22, 2024</time></p> ? -->
-                </div>
-            </div>
-            <div class="media">
-                <img src="../images/imageFirst_200.jpg">
-            </div>
-            <div class="copy-content">
-                <p>Venturing into Torres Del Paine National Park is embarking on a journey through nature's grandeur. The W Trek, so named for its 
-                shape resembling the letter "W" on the map, offers a four-day immersion into the breathtaking landscapes of Patagonia. As someone 
-                who has traversed its varied terrain, I can attest to the sheer majesty and challenge it presents.
-                Day one brings you face to face with the iconic peaks of the Paine Massif as you trek towards the base of the renowned towers. 
-                The sight of these granite giants, piercing the sky like sentinels of the wilderness, is nothing short of awe-inspiring.
-                The following days lead you through a tapestry of ecosystems, from lush valleys to windswept plateaus. Each step unveils a new 
-                panorama, from glacial lakes to dense forests, showcasing the park's remarkable biodiversity.
-                But it's not just the scenery that captivates; it's the raw, untamed beauty of the landscape that leaves an indelible mark on 
-                your soul. The challenge of navigating rugged trails and unpredictable weather only adds to the sense of adventure.
-                As the trek progresses, camaraderie forms among fellow hikers, bonded by shared experiences and mutual respect for the wilderness. 
-                Evenings spent in rustic refugios offer moments of rest and reflection, with the crackling of wood fires and the aroma of hearty 
-                meals filling the air.
-                And then, on the final day, as you reach the end of the "W" and gaze upon the vast expanse of Glacier Grey, you realize that this 
-                journey has not only tested your physical endurance but also awakened a profound appreciation for the untamed beauty of our planet.
-                The W Trek in Torres Del Paine is more than just a hike; it's a pilgrimage to the heart of Patagonia, where every step is a 
-                testament to the power and resilience of nature.</p>
-            </div>
-        </article>
+        <button id="editButton" style="display: none;" class="edit-button">Edit</button>
+        <div id="singlePostContainer"></div>
+        <button id="deleteButton" style="display: none;" class="delete-button">Delete</button>
     </main>
     <footer>
         <ul class="footer-nav">

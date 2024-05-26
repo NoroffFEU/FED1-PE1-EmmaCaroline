@@ -1,31 +1,19 @@
 
-import * as listeners from "./handlers/index.mjs";
-import * as templates from "./templates/index.mjs";
-import * as postMethods from "./api/posts/index.mjs";
-
+import { checkAuthentication } from "./api/auth/login.mjs";
+import { setRegisterFormListener } from "./api/auth/register.mjs";
+import { setLoginFormListener } from "./api/auth/login.mjs";
 
 const path = location.pathname;
 
-if (path === '/account/login.html') {
-    listeners.setLoginFormListener()
-} else if (path === '/account/register.html') {
-    listeners.setRegisterFormListener()
-}
+document.addEventListener('DOMContentLoaded', () => {
+    checkAuthentication();
 
-
-// test function (#post targeter parent div fra html som template posts skal ligge i, posts.pop() gets the last post)
-/*async function testTemplate() {
-    const posts = await postMethods.getPosts();
-    const post = posts.pop()
-    const container = document.querySelector("#post");
-    templates.renderPostTemplate(post, container);
-}*/
-
-/*post.createPost()
-post.updatePost()
-post.removePost()
-post.getPost()
-post.getPosts()*/
+    if (path === '/account/login.html') {
+        setLoginFormListener();
+    } else if (path === '/account/register.html') {
+        setRegisterFormListener();
+    }
+});
 
 
 

@@ -1,18 +1,31 @@
 
-import { API_BASE_URL } from "../constants.mjs";
+import { createBlogPost } from '../posts/apiCalls.mjs';
 
-import { authFetch } from "../authFetch.mjs";
+document.addEventListener('DOMContentLoaded', () => {
+    const createPostForm = document.getElementById('createPostForm');
 
-const action = "/blog/posts";
-const method = "post";
+    createPostForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const formData = new FormData(createPostForm);
+        const post = Object.fromEntries(formData.entries());
 
-export async function createPost(postData) {
-    const createPostURL = API_BASE_URL + action;
+        // Handle the media field as optional
+        if (post.media) {
+            post.media = {
+                url: post.media,
+                alt: post.title // Assuming you want to use the title as alt text
+            };
+        } else {
+            delete post.media;
+        }
 
-    const response = await authFetch(createPostURL, {
-        method,
-        body: JSON.stringify(postData)
-    })
+        const response = await createBlogPost(post); // Use createBlogPost function
 
-    return await response.json();
-}
+        if (response.ok) {
+            alert('Post created successfully!');
+            createPostForm.reset();
+        } else {
+            alert('Failed to create post.');
+        }
+    });
+});
