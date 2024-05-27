@@ -1,7 +1,7 @@
 
-import { checkAuthentication } from "/auth/login.mjs";
-import { setRegisterFormListener } from "/auth/register.mjs";
-import { setLoginFormListener } from "/auth/login.mjs";
+import { checkAuthentication } from "../auth/login.mjs";
+import { setRegisterFormListener } from "../auth/register.mjs";
+import { setLoginFormListener } from "../auth/login.mjs";
 
 const path = location.pathname;
 
