@@ -1,3 +1,4 @@
+
 import { getSinglePost, updateBlogPost } from '../posts/apiCalls.mjs';
 
 export async function setUpdatePostFormListener() {
@@ -6,11 +7,11 @@ export async function setUpdatePostFormListener() {
     const url = new URL(location.href);
     const id = url.searchParams.get("id");
 
-    if (form) {
+    if (form && id) { // Check if id is not null
         try {
             const postResponse = await getSinglePost(id);
             const post = postResponse.data; // Access the data property
-            
+
             console.log('Post data:', post); // Log post data for debugging
 
             // Populate form fields
@@ -29,7 +30,8 @@ export async function setUpdatePostFormListener() {
                     id: updatedPost.id,
                     title: updatedPost.title,
                     body: updatedPost.body || '', // Optional field
-                    tags: [] // Optional field, provide a default empty array
+                    tags: [], // Optional field, provide a default empty array
+                    created: new Date(post.created).toISOString() // Include created date in ISO format
                 };
 
                 // Include media object only if the media URL is provided and valid
@@ -52,8 +54,13 @@ export async function setUpdatePostFormListener() {
                     const updatedResponse = await updateBlogPost(payload);
                     // Handle success: show a success message or update UI
                     console.log("Post updated successfully:", updatedResponse);
-                    window.location.href = `../post/index.html?id=${id}`; // Corrected redirection URL
                     alert("Post updated successfully!"); // Alert for successful update
+                    window.location.href = `../post/index.html?id=${id}`; // Corrected redirection URL
+                
+                    // Show the update date element
+                    const updateDateElement = document.getElementById('updateDate');
+                    updateDateElement.textContent = `Updated: ${new Date().toLocaleDateString()}`;
+                    updateDateElement.style.display = 'block';
                 } catch (error) {
                     // Handle error: show an error message or log the error
                     console.error("Failed to update post:", error.message);
@@ -68,6 +75,7 @@ export async function setUpdatePostFormListener() {
 document.addEventListener('DOMContentLoaded', () => {
     setUpdatePostFormListener();
 });
+
 
 
 
