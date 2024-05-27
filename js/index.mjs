@@ -1,7 +1,6 @@
 
-import { checkAuthentication, setLoginFormListener } from "./api/auth/login.mjs";
+/*import { checkAuthentication, setLoginFormListener } from "./api/auth/login.mjs";
 import { setRegisterFormListener } from "./api/auth/register.mjs";
-/*import { setLoginFormListener } from "./auth/login.mjs";*/
 
 const path = location.pathname;
 
@@ -13,14 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
     } else if (path === '/account/register.html') {
         setRegisterFormListener();
     }
-});
+});*/
 
 
 
 
-/*import { checkAuthentication } from "../auth/login.mjs";
-import { setRegisterFormListener } from "../auth/register.mjs";
-import { setLoginFormListener } from "../auth/login.mjs";
+import { checkAuthentication, setLoginFormListener } from "./api/auth/login.mjs";
+import { setRegisterFormListener } from "./api/auth/register.mjs";
 
 const path = location.pathname;
 console.log('Current Path:', path); // Debug current path
@@ -36,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Setting register form listener');
         setRegisterFormListener();
     }
-});*/
+});
 
 
 
