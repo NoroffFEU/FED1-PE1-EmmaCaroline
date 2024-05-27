@@ -1,5 +1,5 @@
 
-import { API_BASE_URL } from "../js/api/constants.mjs";
+import { API_BASE_URL } from "../constants.mjs";
 
 const action = "/auth/register";
 const method = "post";
