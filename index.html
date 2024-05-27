@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/7f993fe397.js" crossorigin="anonymous"></script>
     <script type="module" src="./js/homepage/carousel.mjs" defer></script>
+    <script type="module" src="./js/homepage/clearButton.mjs" defer></script>
     <script type="module" src="./js/api/posts/allPosts.mjs" defer></script>
     <script type="module" src="./js/index.mjs" defer></script>
 </head>
@@ -44,131 +45,9 @@
                 photos from their adventures in the great outdoors.
             <p>Join us as we traverse rugged mountain peaks, meander through lush forests, and forge unforgettable memories on trails less traveled.</p>
         </div>
-        <h1>All Blog Posts</h1>
         <section class="thumbnail-imageGrid" id="thumbnailGrid">
             <!-- Posts will be dynamically inserted here -->
         </section>
-        <!--<section class="thumbnail-imageGrid"> 
-            <div class="blog-post-thumbnail">
-                <div class="grid-image-container">
-                    <img src="">
-                </div>
-                <h3 class="blog-post-title"><span class="thumbnail-text-small"></span></h3>
-                <div class="button">
-                    <a href="">Read More</a>
-                </div>
-            </div>
-        </section>-->
-        <!--<section class="thumbnail-imageGrid"> 
-            <div class="blog-post-thumbnail">
-                <div class="grid-image-container">
-                    <img class="gridImage" src="./images/imageFirst_200.jpg">
-                </div>
-                <h3 class="blog-post-title">W Trek in Torres Del Paine: <span class="thumbnail-text-small">A four-day hike through amazing varied terrain</span></h3>
-                <div class="button">
-                    <a href="./post/index.html">Read More</a>
-                </div>
-            </div> 
-            <div class="blog-post-thumbnail">
-                <div class="grid-image-container">
-                    <img class="gridImage" src="./images/image_trolltunga_200.jpg">
-                </div>
-                <h3 class="blog-post-title">Journey to the Edge: <span class="thumbnail-text-small">Exploring Trolltunga, Norway's iconic cliff</span></h3>
-                <div class="button">
-                    <a href="./post/index.html">Read More</a>
-                </div>
-            </div>
-            <div class="blog-post-thumbnail">
-                <div class="grid-image-container">
-                    <img class="gridImage" src="./images/image_lake_200.jpg">
-                </div>
-                <h3 class="blog-post-title">River Adventure: <span class="thumbnail-text-small">Navigating serene waters through the rainforest in Costa Rica</span></h3>
-                <div class="button">
-                    <a href="./post/index.html">Read More</a>
-                </div>
-            </div>
-            <div class="blog-post-thumbnail">
-                <div class="grid-image-container">
-                    <img class="gridImage" src="./images/image_leaveNoTrace_200.jpg">
-                </div>
-                <h3 class="blog-post-title">Preserve the Beauty: <span class="thumbnail-text-small">Essential tips for practicing Leave No Trace while hiking</span></h3>
-                <div class="button">
-                    <a href="./post/index.html">Read More</a>
-                </div>
-            </div>
-            <div class="blog-post-thumbnail">
-                <div class="grid-image-container">
-                    <img class="gridImage" src="./images/image_backpack_200.jpg">
-                </div>
-                <h3 class="blog-post-title">Finding Your Fit: <span class="thumbnail-text-small">The ultimate guide to choosing the right backpack for various hiking trips</span></h3>
-                <div class="button">
-                    <a href="./post/index.html">Read More</a>
-                </div>
-            </div>
-            <div class="blog-post-thumbnail">
-                <div class="grid-image-container">
-                    <img class="gridImage" src="./images/image_guide_200.jpg">
-                </div>
-                <h3 class="blog-post-title">Into the Wild: <span class="thumbnail-text-small">A guided expedition through verdant mountain valleys in Georgia</span></h3>
-                <div class="button">
-                    <a href="./post/index.html">Read More</a>
-                </div>
-            </div>
-            <div class="blog-post-thumbnail">
-                <div class="grid-image-container">
-                    <img class="gridImage" src="./images/image_glacier_200.jpg">
-                </div>
-                <h3 class="blog-post-title">Crystalline Wonders: <span class="thumbnail-text-small">A breathtaking guided hike over Norway’s largest glacier, Jostedalsbreen</span></h3>
-                <div class="button">
-                    <a href="./post/index.html">Read More</a>
-                </div>
-            </div>
-            <div class="blog-post-thumbnail">
-                <div class="grid-image-container">
-                    <img class="gridImage" src="./images/image_packlight_200.jpg">
-                </div>
-                <h3 class="blog-post-title">Lighten Your Load: <span class="thumbnail-text-small">Tips for mastering the art of lightpacking for effortless adventures</span></h3>
-                <div class="button">
-                    <a href="./post/index.html">Read More</a>
-                </div>
-            </div>
-            <div class="blog-post-thumbnail">
-                <div class="grid-image-container">
-                    <img class="gridImage" src="./images/image_peaks_200.jpg">
-                </div>
-                <h3 class="blog-post-title">Summit Fever: <span class="thumbnail-text-small">Conquering 20 peaks in one year, a journey of epic proportions</span></h3>
-                <div class="button">
-                    <a href="./post/index.html">Read More</a>
-                </div>
-            </div>
-            <div class="blog-post-thumbnail">
-                <div class="grid-image-container">
-                    <img class="gridImage" src="./images/image_tents_200.jpg">
-                </div>
-                <h3 class="blog-post-title">Shelter Selection: <span class="thumbnail-text-small">A comprehensive guide to choosing the ideal tent suited for your outdoor escapades</span></h3>
-                <div class="button">
-                    <a href="./post/index.html">Read More</a>
-                </div>
-            </div>
-            <div class="blog-post-thumbnail">
-                <div class="grid-image-container">
-                    <img class="gridImage" src="./images/image_hike_200.jpg">
-                </div>
-                <h3 class="blog-post-title">High Altitude Thrills: <span class="thumbnail-text-small">Scaling the skyline on a majestic mountain ridge hike</span></h3>
-                <div class="button">
-                    <a href="./post/index.html">Read More</a>
-                </div>
-            </div>
-            <div class="blog-post-thumbnail">
-                <div class="grid-image-container">
-                    <img class="gridImage" src="./images/image_fjords_200.jpg">
-                </div>
-                <h3 class="blog-post-title">Fjord Fantasies: <span class="thumbnail-text-small">Trekking along Norway's spectacular coastal trails</span></h3>
-                <div class="button">
-                    <a href="./post/index.html">Read More</a>
-                </div>
-            </div>
-        </section>-->
         <section class="follow-subscribe-container">
             <div class="follow-us-container">
                 <div class="heading-container">

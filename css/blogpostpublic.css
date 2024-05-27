@@ -1,13 +1,17 @@
 
 /* Styling of content on post/index.html */
 
-.allPosts { /*change to not camelCase*/
-    /**/
+#editButtonContainer, #deleteButtonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 .author-date-container {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .author {

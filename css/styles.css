@@ -157,7 +157,7 @@ main {
     cursor: pointer;
 }
 
-.button p, button p, .button a, button a { /*remove button p later, don't need*/
+.button p, button p, .button a, button a {
     color: var(--color-secondary);
     font-size: var(--font-size-mobile-copy);
     text-transform: uppercase;
@@ -402,6 +402,7 @@ main {
     .title {
         margin-top: 60px;
         margin-bottom: 60px;
+        font-size: var(--font-size-desktop-h3);
     }
 
     .copy-content {
