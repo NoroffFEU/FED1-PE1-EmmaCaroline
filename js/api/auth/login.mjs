@@ -1,6 +1,6 @@
 
-import { API_BASE_URL } from "../constants.mjs";
-import * as storage from "../../storage/index.mjs";
+import { API_BASE_URL } from "../js/api/constants.mjs";
+import * as storage from "../js/storage/index.mjs";
 
 const action = "/auth/login";
 const method = "post";
@@ -51,7 +51,7 @@ export async function login(profile) {
     }
 }
 
-export function setLoginFormListener() {
+/*export function setLoginFormListener() {
     const form = document.querySelector("#loginForm");
 
     form.addEventListener("submit", async (event) => {
@@ -65,5 +65,26 @@ export function setLoginFormListener() {
 
         // Check authentication to show/hide elements based on login status
         checkAuthentication();
+    });
+}*/
+
+
+
+export function setLoginFormListener() {
+    document.addEventListener("DOMContentLoaded", () => {
+        const form = document.querySelector("#loginForm");
+
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            const profile = Object.fromEntries(formData.entries());
+
+            // Send it to the API:
+            await login(profile);
+
+            // Check authentication to show/hide elements based on login status
+            checkAuthentication();
+        });
     });
 }
