@@ -2,7 +2,7 @@
 import { getSinglePost, deleteBlogPost } from '../posts/apiCalls.mjs';
 import * as storage from "../../storage/index.mjs";
 
-function createSinglePostHTML(responseData) {
+/*function createSinglePostHTML(responseData) {
     const post = responseData.data; // Access the post data correctly
     console.log('Post object:', post); // Log the post object for debugging
 
@@ -17,6 +17,53 @@ function createSinglePostHTML(responseData) {
     const formattedUpdatedDate = post.updated ? new Date(post.updated).toLocaleDateString() : ''; // Check if updated date exists
     const postTitle = post.title || 'No title available';
     const postBody = post.body || 'No content available';
+    const postMedia = post.media || {};
+
+    const profile = JSON.parse(localStorage.getItem('profile'));
+    const name = profile ? profile.name : 'emma_caroline'; // Default to "emma_caroline" if not logged in
+
+    // Generate HTML for single post
+    let postHTML = `
+        <div class="post-content">
+            <h1 class="title">${postTitle}</h1>
+            <div class="author-date-container">
+                <div class="author">
+                    <i class="fa-solid fa-user"></i>
+                    <p>AUTHOR: ${name}</p>
+                </div>
+                <div class="date">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <p>CREATED: ${formattedDate}</p>
+                    ${formattedUpdatedDate && post.updated !== post.created ? `<p>UPDATED: ${formattedUpdatedDate}</p>` : ''} <!-- Display updated date if available and different from created date -->
+                </div>
+            </div>
+            <div class="media">
+                <img src="${postMedia.url || ''}" alt="${postMedia.alt || ''}">
+            </div>
+            <div class="copy-content">
+                <p>${postBody}</p>
+            </div>
+        </div>
+    `;
+
+    return postHTML;
+}*/
+
+function createSinglePostHTML(responseData) {
+    const post = responseData.data; // Access the post data correctly
+    console.log('Post object:', post); // Log the post object for debugging
+
+    // Check if the post object contains the expected properties
+    if (!post || !post.title) {
+        console.error('Invalid post data:', post);
+        return '<p>Error: Invalid post data.</p>';
+    }
+
+    // Access properties from the post object
+    const formattedDate = new Date(post.created).toLocaleDateString();
+    const formattedUpdatedDate = post.updated ? new Date(post.updated).toLocaleDateString() : ''; // Check if updated date exists
+    const postTitle = post.title || 'No title available';
+    const postBody = post.body ? post.body.replace(/\n/g, '<br>') : 'No content available'; // Replace newline characters with HTML line breaks
     const postMedia = post.media || {};
 
     const profile = JSON.parse(localStorage.getItem('profile'));

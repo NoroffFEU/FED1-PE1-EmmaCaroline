@@ -15,42 +15,6 @@ export function checkAuthentication() {
     }
 }
 
-
-/*export async function login(profile) {
-    const loginURL = API_BASE_URL + action;
-    const body = JSON.stringify(profile);
-
-    try {
-        const response = await fetch(loginURL, {
-            headers: {
-                "Content-Type": "application/json"
-            },
-            method,
-            body
-        });
-
-        const result = await response.json();
-
-        if (response.ok) {
-            const { accessToken, ...user } = result.data;
-
-            storage.save("token", accessToken);
-            storage.save("profile", user);
-
-            alert("You are now logged in");
-
-            // Redirect to the homepage after successful login
-            window.location.href = "../index.html";
-
-        } else {
-            alert("Login failed: " + result.message);
-        }
-    } catch (error) {
-        console.error("Error during login:", error);
-        alert("An error occurred. Please try again later.");
-    }
-} MY OWN OLD CODE*/
-
 export async function login(profile) {
     const loginURL = API_BASE_URL + action;
     console.log('Login URL:', loginURL);
