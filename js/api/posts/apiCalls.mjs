@@ -1,5 +1,5 @@
 
-import { authFetch } from '../authFetch.mjs';
+import { authFetch } from '../auth/authFetch.mjs';
 import { API_BASE_URL } from '../constants.mjs';
 
 const DEFAULT_NAME = "emma_caroline";
@@ -20,7 +20,6 @@ export async function getAllPosts(name = DEFAULT_NAME) {
     const endpoint = `${API_BASE_URL}/blog/posts/${name}`;
     const response = await authFetch(endpoint);
     const responseBody = await response.json();
-    console.log('API Response for all posts:', responseBody);
 
     if (!response.ok) {
         throw new Error('Failed to fetch posts');
@@ -36,12 +35,10 @@ export async function getSinglePost(id, name = DEFAULT_NAME) {
     }
     const post = await response.json();
 
-    // Check if the "body" field is null and handle accordingly
     if (post.body === null) {
-        post.body = 'No content available'; // Or any other message you prefer
+        post.body = 'No content available'; 
     }
 
-    console.log('Fetched single post:', post);
     return post;
 }
 
@@ -67,7 +64,6 @@ export async function updateBlogPost(postData, name = DEFAULT_NAME) {
     const responseBody = await response.json();
 
     if (!response.ok) {
-        console.error('Failed to update post:', responseBody);
         throw new Error(`Failed to update post: ${responseBody.errors ? responseBody.errors[0].message : ''}`);
     }
 

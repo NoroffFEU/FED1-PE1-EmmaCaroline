@@ -1,12 +1,12 @@
 
+// Banner carousel
+
 import { getAllPosts } from '../api/posts/apiCalls.mjs';
 
 async function fetchPosts() {
     try {
         const { data: posts } = await getAllPosts();
-        // Sort posts by created date, assuming 'created' is a valid date string
         posts.sort((a, b) => new Date(b.created) - new Date(a.created));
-        // Return only the three latest posts
         return posts.slice(0, 3);
     } catch (error) {
         console.error('Failed to fetch posts:', error);
@@ -49,7 +49,6 @@ async function createCarouselSlides() {
         <div class="dots-container">${dotsHTML}</div>
     `;
 
-    // Initialize the carousel
     showSlides(slideIndex);
 }
 

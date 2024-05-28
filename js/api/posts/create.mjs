@@ -9,20 +9,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const formData = new FormData(createPostForm);
         const post = Object.fromEntries(formData.entries());
 
-        // Replace newline characters with HTML line breaks
         post.body = post.body.replace(/\n/g, '<br>');
 
-        // Handle the media field as optional
         if (post.media) {
             post.media = {
                 url: post.media,
-                alt: post.title // Assuming you want to use the title as alt text
+                alt: post.title 
             };
         } else {
             delete post.media;
         }
 
-        const response = await createBlogPost(post); // Use createBlogPost function
+        const response = await createBlogPost(post); 
 
         if (response.ok) {
             alert('Post created successfully!');

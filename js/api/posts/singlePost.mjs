@@ -3,43 +3,38 @@ import { getSinglePost, deleteBlogPost } from '../posts/apiCalls.mjs';
 import * as storage from "../../storage/index.mjs";
 
 function createSinglePostHTML(responseData) {
-    const post = responseData.data; // Access the post data correctly
-    console.log('Post object:', post); // Log the post object for debugging
+    const post = responseData.data;
 
-    // Check if the post object contains the expected properties
     if (!post || !post.title) {
-        console.error('Invalid post data:', post);
         return '<p>Error: Invalid post data.</p>';
     }
 
-    // Access properties from the post object
     const formattedDate = new Date(post.created).toLocaleDateString();
-    const formattedUpdatedDate = post.updated ? new Date(post.updated).toLocaleDateString() : ''; // Check if updated date exists
+    const formattedUpdatedDate = post.updated ? new Date(post.updated).toLocaleDateString() : '';
     const postTitle = post.title || 'No title available';
-    const postBody = post.body ? post.body.replace(/\n/g, '<br>') : 'No content available'; // Replace newline characters with HTML line breaks
+    const postBody = post.body ? post.body.replace(/\n/g, '<br>') : 'No content available';
     const postMedia = post.media || {};
 
     const profile = JSON.parse(localStorage.getItem('profile'));
-    const name = profile ? profile.name : 'emma_caroline'; // Default to "emma_caroline" if not logged in
+    const name = profile ? profile.name : 'emma_caroline';
 
-    // Generate HTML for single post
     let postHTML = `
         <div class="post-content">
             <h1 class="title">${postTitle}</h1>
-            <div class="author-date-container">
-                <div class="author">
-                    <i class="fa-solid fa-user"></i>
-                    <p>AUTHOR: ${name}</p>
-                </div>
-                <div class="date">
-                    <i class="fa-solid fa-calendar-days"></i>
-                    <p>CREATED: ${formattedDate}</p>
-                    ${formattedUpdatedDate && post.updated !== post.created ? `<p>UPDATED: ${formattedUpdatedDate}</p>` : ''} <!-- Display updated date if available and different from created date -->
-                </div>
-            </div>
             <div class="media">
                 <img src="${postMedia.url || ''}" alt="${postMedia.alt || ''}">
             </div>
+            <div class="author-date-container">
+            <div class="author">
+                <i class="fa-solid fa-user"></i>
+                <p>AUTHOR: ${name}</p>
+            </div>
+            <div class="date">
+                <i class="fa-solid fa-calendar-days"></i>
+                <p>CREATED: ${formattedDate}</p>
+                ${formattedUpdatedDate && post.updated !== post.created ? `<p>UPDATED: ${formattedUpdatedDate}</p>` : ''} <!-- Display updated date if available and different from created date -->
+            </div>
+        </div>
             <div class="copy-content">
                 <p>${postBody}</p>
             </div>
@@ -54,29 +49,21 @@ export async function displaySinglePost() {
     const urlParams = new URLSearchParams(window.location.search);
     const postId = urlParams.get('id');
 
-    console.log('Post ID:', postId); // Log postId
-
     if (!postId) {
-        console.error('Post ID is missing');
         singlePostContainer.innerHTML = '<p>No post found.</p>';
         return;
     }
 
     try {
-        const postResponse = await getSinglePost(postId); // No name parameter needed
-        console.log('Fetched single post:', postResponse); // Log the entire post object
+        const postResponse = await getSinglePost(postId); 
 
-        // Generate HTML for single post
         const postHTML = createSinglePostHTML(postResponse);
 
-        // Insert HTML into the container
         singlePostContainer.innerHTML = postHTML;
 
-        // Add event listeners to the buttons
         addButtonEventListeners();
-        checkAccessToken(); // Call after rendering HTML
+        checkAccessToken(); 
     } catch (error) {
-        console.error('Failed to fetch post:', error);
         singlePostContainer.innerHTML = '<p>No post found.</p>';
     }
 }
@@ -104,12 +91,11 @@ function addButtonEventListeners() {
                     const response = await deleteBlogPost(id);
                     if (response.ok) {
                         alert('Post deleted successfully!');
-                        window.location.href = '../index.html'; // Redirect to homepage or another page
+                        window.location.href = '../index.html'; 
                     } else {
                         alert('Failed to delete post.');
                     }
                 } catch (error) {
-                    console.error('Failed to delete post:', error);
                     alert('Failed to delete post.');
                 }
             }

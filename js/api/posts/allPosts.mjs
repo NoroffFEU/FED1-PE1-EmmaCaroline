@@ -6,10 +6,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     async function displayAllPosts() {
         try {
-            const { data: posts } = await getAllPosts(); // No name parameter needed
-            console.log('Raw posts:', posts);
+            const { data: posts } = await getAllPosts();
             if (!Array.isArray(posts)) {
-                console.error('Fetched posts is not an array');
                 return;
             }
             thumbnailGrid.innerHTML = '';
@@ -25,7 +23,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 thumbnailGrid.appendChild(postDiv);
             });
         } catch (error) {
-            console.error('Failed to fetch posts:', error);
+            alert("Failed to fetch posts");
         }
     }
 

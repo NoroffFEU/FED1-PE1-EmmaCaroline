@@ -17,7 +17,6 @@ export function checkAuthentication() {
 
 export async function login(profile) {
     const loginURL = API_BASE_URL + action;
-    console.log('Login URL:', loginURL);
     const body = JSON.stringify(profile);
 
     try {
@@ -29,10 +28,7 @@ export async function login(profile) {
             body
         });
 
-        console.log('Response status:', response.status); // Debug response status
-
         const result = await response.json();
-        console.log('Login result:', result); // Debug result
 
         if (response.ok) {
             const { accessToken, ...user } = result.data;
@@ -42,14 +38,12 @@ export async function login(profile) {
 
             alert("You are now logged in");
 
-            // Redirect to the homepage after successful login
             window.location.href = "../index.html";
 
         } else {
             alert("Login failed: " + result.message);
         }
     } catch (error) {
-        console.error("Error during login:", error);
         alert("An error occurred. Please try again later.");
     }
 }
@@ -63,10 +57,8 @@ export function setLoginFormListener() {
         const formData = new FormData(form);
         const profile = Object.fromEntries(formData.entries());
 
-        // Send it to the API:
         await login(profile);
 
-        // Check authentication to show/hide elements based on login status
         checkAuthentication();
     });
 }
