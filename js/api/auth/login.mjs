@@ -10,10 +10,8 @@ export function checkAuthentication() {
 
     if (accessToken) {
         document.getElementById('createPostLink').style.display = 'block';
-        document.getElementById('logOffLink').style.display = 'block';
     } else {
         document.getElementById('createPostLink').style.display = 'none';
-        document.getElementById('logOffLink').style.display = 'none';
     }
 }
 
