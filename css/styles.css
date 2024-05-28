@@ -153,8 +153,9 @@ main {
 .button, button { 
     text-align: center;
     background-color: var(--btn-color);
-    padding: 12px 26px;
+    padding: 6px 20px;
     cursor: pointer;
+    border: solid 1px var(--color-tertiary);
 }
 
 .button p, button p, .button a, button a {
@@ -199,6 +200,10 @@ main {
     }
 
     /* BUTTON, TABLET */
+
+    .button, button {
+        padding: 12px 26px;
+    }
 
     .button p, button p, .button a, button a {
         font-size: var(--font-size-tablet-desktop-copy);
@@ -253,7 +258,11 @@ main {
     }
 
     .blog-post-thumbnail {
-        height: 420px;
+        height: 360px;
+    }
+
+    .blog-post-title a {
+        font-size: var(--font-size-tablet-h3);
     }
 
     .follow-subscribe-container {
@@ -378,6 +387,10 @@ main {
 
     .blog-name-info {
         margin: 0 var(--margin-desktop);
+    }
+
+    .blog-post-thumbnail {
+        height: 380px;
     }
 
     .follow-subscribe-container {

@@ -166,12 +166,13 @@
 
 .blog-post-thumbnail {
     width: 100%; 
-    height: 380px; 
+    height: 280px;
     background-color: var(--container-color);
     display: flex; 
     flex-direction: column; 
     position: relative;
     margin-bottom: 1rem; 
+    border: solid 1px #EFDDDD;
 }
 
 .grid-image-container {
@@ -205,8 +206,13 @@
     text-align: center;
     font-family: var(--font-opensans);
     font-size: var(--font-size-mobile-h3);
-    word-wrap: break-word;
     margin: 1.25rem 1rem 0 1rem;
+}
+
+.blog-post-title a {
+    color: var(--color-tertiary);
+    font-family: var(--font-opensans);
+    font-size: var(--font-size-mobile-h3);
 }
 
 .banner-images .button {

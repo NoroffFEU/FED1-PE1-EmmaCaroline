@@ -20,10 +20,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     <div class="grid-image-container">
                         ${post.media ? `<a href="post/index.html?id=${post.id}"><img src="${post.media.url}" alt="${post.media.alt}"></a>` : ''}
                     </div>
-                    <h3 class="blog-post-title">${post.title}</h3>
-                    <div class="button">
-                        <a href="post/index.html?id=${post.id}">Read More</a>
-                    </div>
+                    <h3 class="blog-post-title"><a href="post/index.html?id=${post.id}">${post.title}</a></h3>
                 `;
                 thumbnailGrid.appendChild(postDiv);
             });
