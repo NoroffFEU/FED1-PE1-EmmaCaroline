@@ -442,9 +442,9 @@ main {
 
     /* BLOG POST PUBLIC PAGE, DESKTOP */
 
-    .author-date-container .copy-content {
-        margin-left: var(--margin-desktop);
-        margin-right: var(--margin-desktop);
+    .author-date-container, .copy-content {
+        margin-left: var(--margin-desktop-body-content);
+        margin-right: var(--margin-desktop-body-content);
     }
 
     .title {
@@ -455,6 +455,7 @@ main {
 
     .copy-content {
         margin-bottom: var(--margin-between-content-desktop);
+        margin-top: var(--margin-between-content-desktop);
     }
 
     /* CREATE POST PAGE */
