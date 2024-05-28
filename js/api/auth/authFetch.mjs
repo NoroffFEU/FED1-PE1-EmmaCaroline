@@ -16,3 +16,8 @@ export async function authFetch(url, options) {
         headers: headers()
     });
 }
+
+export function clearToken() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("profile");
+}

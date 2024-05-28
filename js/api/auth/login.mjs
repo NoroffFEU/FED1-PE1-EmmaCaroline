@@ -1,6 +1,7 @@
 
 import { API_BASE_URL } from "../constants.mjs";
 import * as storage from "../../storage/index.mjs";
+import { clearToken } from "./authFetch.mjs";
 
 const action = "/auth/login";
 const method = "post";
@@ -10,8 +11,10 @@ export function checkAuthentication() {
 
     if (accessToken) {
         document.getElementById('createPostLink').style.display = 'block';
+        document.getElementById('logOffLink').style.display = 'block';
     } else {
         document.getElementById('createPostLink').style.display = 'none';
+        document.getElementById('logOffLink').style.display = 'none';
     }
 }
 
