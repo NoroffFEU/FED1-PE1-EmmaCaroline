@@ -244,6 +244,31 @@ main {
         height: 65px;
     }
 
+    .search-sort {
+        display: flex;
+        flex-direction: row;
+        margin-left: var(--margin-tablet);
+        margin-right: var(--margin-tablet);
+        justify-content: flex-start;
+    }
+
+    .searchbar, .sort-by {
+        flex-direction: column;
+    }
+
+    .searchbar input, .sort-by select {
+        width: 100%;
+    }
+
+    .sort-by {
+        margin-top: 0;
+        margin-left: 20px;
+    }
+
+    .searchbar label, .searchbar input, .sort-by label, .sort-by select {
+        font-size: var(--font-size-tablet-desktop-copy);
+    } 
+
     .thumbnail-imageGrid {
         grid-template-columns: repeat(2, 1fr);
         max-width: calc(100% - 8.5rem);
@@ -373,6 +398,11 @@ main {
 
     .blog-name-info h3 {
         font-size: var(--font-size-desktop-h3);
+    }
+
+    .search-sort {
+        margin-left: var(--margin-desktop);
+        margin-right: var(--margin-desktop);
     }
 
     .grid-image-container {

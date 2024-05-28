@@ -222,6 +222,30 @@
     transform: translate(-50%, -50%);
 }
 
+.search-sort {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: var(--margin-mobile);
+}
+
+.searchbar input {
+    width: 50%;
+}
+
+.sort-by {
+    margin-top: 10px;
+}
+
+.sort-by select {
+    width:30%;
+}
+
+.searchbar label, .searchbar input, .sort-by label, .sort-by select {
+    font-family: var(--font-roboto);
+    font-size: var(--font-size-mobile-copy);
+}
+
 .blog-post-thumbnail .button {
     position: absolute;
     bottom: 10px;
