@@ -47,7 +47,7 @@
     top: 50%;
     width: auto;
     margin: -22px 16px 0 16px;
-    padding: 10px 12px;
+    padding: 2px 6px;
     color: var(--color-primary);
     font-weight: bold;
     font-size: 26px;
@@ -97,8 +97,8 @@
 
 .dot {
     cursor: pointer;
-    height: 15px;
-    width: 15px;
+    height: 10px; /*15px;*/
+    width: 10px; /*15px;*/
     margin: 10px 2px;
     background-color: #bbb;
     border-radius: 50%;

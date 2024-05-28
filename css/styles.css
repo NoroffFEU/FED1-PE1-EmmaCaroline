@@ -239,6 +239,11 @@ main {
         font-size: var(--font-size-tablet-h3);
     }
 
+    .dot {
+        height: 15px;
+        width: 15px;
+    }
+
     .logo img {
         width: 65px;
         height: 65px;
