@@ -1,7 +1,6 @@
 
 import { API_BASE_URL } from "../constants.mjs";
 import * as storage from "../../storage/index.mjs";
-import { clearToken } from "./authFetch.mjs";
 
 const action = "/auth/login";
 const method = "post";
