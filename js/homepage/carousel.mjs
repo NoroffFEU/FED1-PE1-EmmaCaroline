@@ -19,78 +19,112 @@ async function createCarouselSlides() {
     ".banner-carousel-container"
   );
 
+  carouselContainer.innerHTML = "";
+
   if (!posts.length) {
-    carouselContainer.innerHTML = "<p>No posts available</p>";
+    const noPostsMessage = document.createElement("p");
+    noPostsMessage.textContent = "No posts available";
+    carouselContainer.appendChild(noPostsMessage);
     return;
   }
 
-  const slidesHTML = posts
-    .map(
-      (post) => `
-        <div class="banner-images fade">
-            <div class="banner-image-container">
-                <div class="banner-image-overlay"></div>
-                <img src="${post.media ? post.media.url : ""}" alt="${
-        post.media ? post.media.alt : ""
-      }">
-            </div>
-            <div class="banner-text">
-                <h2>${post.title}</h2>
-            </div>
-            <div class="button">
-                <a href="post/index.html?id=${post.id}">Read More</a>
-            </div>
-        </div>
-    `
-    )
-    .join("");
+  posts.forEach((post) => {
+    const bannerImageDiv = document.createElement("div");
+    bannerImageDiv.classList.add("banner-images", "fade");
 
-  const dotsHTML = posts
-    .map(
-      (_, index) => `
-        <span class="dot" onclick="currentSlide(${index + 1})"></span>
-    `
-    )
-    .join("");
+    const bannerImageContainerDiv = document.createElement("div");
+    bannerImageContainerDiv.classList.add("banner-image-container");
 
-  carouselContainer.innerHTML = `
-        ${slidesHTML}
-        <a class="banner-prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="banner-next" onclick="plusSlides(1)">&#10095;</a>
-        <div class="dots-container">${dotsHTML}</div>
-    `;
+    const bannerImageOverlayDiv = document.createElement("div");
+    bannerImageOverlayDiv.classList.add("banner-image-overlay");
+
+    const img = document.createElement("img");
+    img.src = post.media ? post.media.url : "";
+    img.alt = post.media ? post.media.alt : "";
+
+    bannerImageContainerDiv.appendChild(bannerImageOverlayDiv);
+    bannerImageContainerDiv.appendChild(img);
+
+    const bannerTextDiv = document.createElement("div");
+    bannerTextDiv.classList.add("banner-text");
+    const h2 = document.createElement("h2");
+    h2.textContent = post.title;
+    bannerTextDiv.appendChild(h2);
+
+    const buttonDiv = document.createElement("div");
+    buttonDiv.classList.add("button");
+    const anchor = document.createElement("a");
+    anchor.href = `post/index.html?id=${post.id}`;
+    anchor.textContent = "Read More";
+    buttonDiv.appendChild(anchor);
+
+    bannerImageDiv.appendChild(bannerImageContainerDiv);
+    bannerImageDiv.appendChild(bannerTextDiv);
+    bannerImageDiv.appendChild(buttonDiv);
+
+    carouselContainer.appendChild(bannerImageDiv);
+  });
+
+  const prevButton = document.createElement("a");
+  prevButton.classList.add("banner-prev");
+  prevButton.innerHTML = "&#10094;";
+  prevButton.onclick = function () {
+    plusSlides(-1);
+  };
+
+  const nextButton = document.createElement("a");
+  nextButton.classList.add("banner-next");
+  nextButton.innerHTML = "&#10095;";
+  nextButton.onclick = function () {
+    plusSlides(1);
+  };
+
+  const dotsContainer = document.createElement("div");
+  dotsContainer.classList.add("dots-container");
+
+  posts.forEach((_, index) => {
+    const dot = document.createElement("span");
+    dot.classList.add("dot");
+    dot.onclick = function () {
+      currentSlide(index + 1);
+    };
+    dotsContainer.appendChild(dot);
+  });
+
+  carouselContainer.appendChild(prevButton);
+  carouselContainer.appendChild(nextButton);
+  carouselContainer.appendChild(dotsContainer);
 
   showSlides(slideIndex);
 }
 
 let slideIndex = 1;
 
-export function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("banner-images");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {
+export function showSlides(numberOfSlides) {
+  const slides = document.getElementsByClassName("banner-images");
+  const dots = document.getElementsByClassName("dot");
+  if (numberOfSlides > slides.length) {
     slideIndex = 1;
   }
-  if (n < 1) {
+  if (numberOfSlides < 1) {
     slideIndex = slides.length;
   }
-  for (i = 0; i < slides.length; i++) {
+  for (let i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
-  for (i = 0; i < dots.length; i++) {
+  for (let i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
   slides[slideIndex - 1].style.display = "block";
   dots[slideIndex - 1].className += " active";
 }
 
-window.plusSlides = function (n) {
-  showSlides((slideIndex += n));
+window.plusSlides = function (numberOfSlides) {
+  showSlides((slideIndex += numberOfSlides));
 };
 
-window.currentSlide = function (n) {
-  showSlides((slideIndex = n));
+window.currentSlide = function (numberOfSlides) {
+  showSlides((slideIndex = numberOfSlides));
 };
 
 document.addEventListener("DOMContentLoaded", createCarouselSlides);
