@@ -1,99 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to All About Adventures - An outdoor life/hiking blog with tips and inspiration for your next trip">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Welcome to All About Adventures - An outdoor life/hiking blog with tips and inspiration for your next trip"
+    />
     <title>All About Adventures - Home</title>
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/7f993fe397.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/7f993fe397.js"
+      crossorigin="anonymous"
+    ></script>
     <script type="module" src="./js/homepage/carousel.mjs"></script>
     <script type="module" src="./js/homepage/clearButton.mjs"></script>
     <script type="module" src="./js/api/posts/allPosts.mjs"></script>
     <script type="module" src="./js/index.mjs"></script>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-	  	<div class="navigation">
-			<input type="checkbox" id="toggle-menu" class="toggle-menu" aria-label="Toggle Menu">
-			<span id="toggle-menu-label" class="visually-hidden">Toggle Menu</span>
-		  	<div class="hamburger"></div>
-			<ul class="menu">
-			  <li><a href="index.html" aria-label="Home">Home</a></li>
-			  <li><a href="./account/login.html" aria-label="Account Login">Account Login</a></li>
-			  <li><a href="./account/register.html" aria-label="Account Register">Account Register</a></li>
-              <li id="createPostLink" style="display: none;"><a href="./post/create.html">Create Post</a></li>
-			</ul>
-	  	</div>
-  	</header>
+      <div class="navigation">
+        <input
+          type="checkbox"
+          id="toggle-menu"
+          class="toggle-menu"
+          aria-label="Toggle Menu"
+        />
+        <span id="toggle-menu-label" class="visually-hidden">Toggle Menu</span>
+        <div class="hamburger"></div>
+        <ul class="menu">
+          <li><a href="index.html" aria-label="Home">Home</a></li>
+          <li>
+            <a href="./account/login.html" aria-label="Account Login"
+              >Account Login</a
+            >
+          </li>
+          <li>
+            <a href="./account/register.html" aria-label="Account Register"
+              >Account Register</a
+            >
+          </li>
+          <li id="createPostLink" style="display: none">
+            <a href="./post/create.html">Create Post</a>
+          </li>
+        </ul>
+      </div>
+    </header>
     <main>
-        <h1 class="visually-hidden">All About Adventures - Hiking inspiration and tips</h1>
-        <div class="banner-carousel-container">
-            <!-- Dynamically made -->
+      <h1 class="visually-hidden">
+        All About Adventures - Hiking inspiration and tips
+      </h1>
+      <div class="banner-carousel-container">
+        <!-- Dynamically made -->
+      </div>
+      <div class="logo">
+        <img src="./images/logo.png" alt="Simple logo of a mountain" />
+      </div>
+      <section class="blog-name-info">
+        <h3>All About Adventures</h3>
+        <p>
+          All About Adventures is your ultimate online destination for hiking
+          and outdoor exploration! This is a vibrant community where passionate
+          hikers from around the globe come together to share their exhilarating
+          experiences, valuable tips, and breathtaking photos from their
+          adventures in the great outdoors.
+        </p>
+
+        <p>
+          Join us as we traverse rugged mountain peaks, meander through lush
+          forests, and forge unforgettable memories on trails less traveled.
+        </p>
+      </section>
+      <div class="search-sort">
+        <div class="searchbar">
+          <label for="searchInput">Search:</label>
+          <input type="text" id="searchInput" placeholder="Search by title" />
         </div>
-        <div class="logo">
-            <img src="./images/logo.png" alt="Simple logo of a mountain">
+        <div class="sort-by">
+          <label for="sortSelect">Sort by:</label>
+          <select id="sortSelect">
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+          </select>
         </div>
-        <section class="blog-name-info">
-            <h3>All About Adventures</h3>
-            <p>All About Adventures is your ultimate online destination for hiking and outdoor exploration! This is a vibrant community where 
-                passionate hikers from around the globe come together to share their exhilarating experiences, valuable tips, and breathtaking 
-                photos from their adventures in the great outdoors.
-            <p>Join us as we traverse rugged mountain peaks, meander through lush forests, and forge unforgettable memories on trails less traveled.</p>
-        </section>
-        <div class="search-sort">
-            <div class="searchbar">
-                <label for="searchInput">Search:</label>
-                <input type="text" id="searchInput" placeholder="Search by title">
-            </div>
-            <div class="sort-by">
-                <label for="sortSelect">Sort by:</label>
-                <select id="sortSelect">
-                    <option value="newest">Newest</option>
-                    <option value="oldest">Oldest</option>
-                </select>
-            </div>
+      </div>
+      <div class="thumbnail-imageGrid" id="thumbnailGrid">
+        <!-- Dynamically made -->
+      </div>
+      <section class="follow-subscribe-container">
+        <div class="follow-us-container">
+          <div class="heading-container">
+            <h3>Follow us</h3>
+          </div>
+          <div class="follow-us-icons">
+            <i class="fa-brands fa-youtube"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-x-twitter"></i>
+          </div>
         </div>
-        <div class="thumbnail-imageGrid" id="thumbnailGrid">
-            <!-- Dynamically made -->
+        <div class="subscribe-container">
+          <div class="heading-container">
+            <h3>Subscribe</h3>
+          </div>
+          <p>
+            Want to keep up with the latest tips and hiking inspiration? Get
+            notified by email when new posts are published!
+          </p>
+          <div class="subscribe-form-container">
+            <form>
+              <label for="subscribe-email" class="visually-hidden"
+                >Email Address</label
+              >
+              <input
+                type="text"
+                id="subscribe-email"
+                name="subscribe-email"
+                placeholder="Email Address"
+              />
+            </form>
+            <div id="clearButton" class="button">
+              <p>Sign up</p>
+            </div>
+          </div>
         </div>
-        <section class="follow-subscribe-container">
-            <div class="follow-us-container">
-                <div class="heading-container">
-                    <h3>Follow us</h3>
-                </div>
-                <div class="follow-us-icons">
-                    <i class="fa-brands fa-youtube"></i>
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-x-twitter"></i>
-                </div>
-            </div>
-            <div class="subscribe-container">
-                <div class="heading-container">
-                    <h3>Subscribe</h3>
-                </div>
-                <p>Want to keep up with the latest tips and hiking inspiration? Get notified by email when new posts are published!</p>
-                <div class="subscribe-form-container">
-                    <form>
-                        <label for="subscribe-email" class="visually-hidden">Email Address</label>
-                        <input type="text" id="subscribe-email" name="subscribe-email" placeholder="Email Address">
-                    </form>
-                    <div id="clearButton" class="button">
-                        <p>Sign up</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+      </section>
     </main>
     <footer>
-        <ul class="footer-nav">
-            <li><p>Privacy Policy</p></li>
-            <li><p>Terms and Conditions</p></li> 
-          </ul>
+      <ul class="footer-nav">
+        <li><p>Privacy Policy</p></li>
+        <li><p>Terms and Conditions</p></li>
+      </ul>
     </footer>
-</body>
+  </body>
 </html>
